@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title text-center">Trails Chat</h1>
+
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Username</span>
+        <input type="text" ng-model="signUpData.username">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="signUpData.password">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Re-nter Password</span>
+        <input type="password" ng-model="signUpData.rePassword">
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive button-outline" ng-click="doSignUp(signUpData)">Sign Up</button>
+      </label>
+      <label class="item text-center colorGray">
+       Already have an Account?
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="navigateToLogin()">Log in</button>
+      </label>
+
+    </div>
+  </ion-content>
+</ion-modal-view>

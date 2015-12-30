@@ -1,0 +1,36 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title text-center">Trails Chat - {{chat.username}}</h1>
+
+    <div class="buttons">
+      <button class="button button-clear" ng-click="logout()">logout</button>
+    </div>
+  </ion-header-bar>
+  <ion-content scroll="true">
+
+
+      <ul class="list">
+        <li class="item" ng-repeat="chat in chatdata | reverse">
+          <b> {{chat.username | limitTo:3 | uppercase}}</b> &nbsp; : &nbsp; {{chat.message}}
+        </li>
+      </ul>
+
+
+
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-light" style="height: 60px;">
+    <div class="row">
+      <div class="col-75">
+        <textarea ng-model="chat.message" placeholder="Your Message" style="width: 100%;resize: none;"></textarea>
+      </div>
+      <div class="col-25">
+        <div class="buttons" ng-if="chat.message.length" ng-click="sendChat(chat.message)">
+          <button class="button button-block padding" >Send</button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </ion-footer-bar>
+</ion-modal-view>
